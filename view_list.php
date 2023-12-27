@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <title>Reg_form</title>
+    <title>View list</title>
 </head>
 <body>
     <section>
@@ -59,6 +59,9 @@
                                     <th>
                                         Registration Date
                                     </th>
+                                    <th>
+                                        Remove
+                                    </th>
                                 </thead>
                                 <tbody>
                                     <?php 
@@ -86,6 +89,9 @@
                                                 <td>"
                                                     .$row['reg_date'].
                                                 "</td>
+                                                <td>
+                                                    <button type='submit' name='remove' class='btn btn-sm btn-danger'>Delete</button>
+                                                </td>
                                             </tr>";
                                         }
                                     }else{
