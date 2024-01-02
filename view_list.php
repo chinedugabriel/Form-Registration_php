@@ -14,6 +14,19 @@
     $result = mysqli_query($conn, $sql);
 
 
+    // if(isset($_POST['remove'])){
+        function removeItem($id){
+            global $conn;
+            
+            $id = $_POST["$id"];
+            $sql = "DELETE FROM visitors WHere id = $id";
+            if(mysqli_query($conn,$sql)){
+                echo "record removed Successfully";
+            }else{
+                echo "failed to remove record".mysqli_error($conn);
+            }
+        }
+    // }
     
 
 ?>
@@ -29,9 +42,9 @@
 </head>
 <body>
     <section>
-        <div class="container-fluid ">
+        <div class="container-fluid px-5">
             <div class="row">
-                <div class="col-md-8 offset-md-2 ">
+                <div class="col-md-12 ">
                     <div class="row my-3">
                         <div class="col-md-12 text-center text-success">
                             <h2>
@@ -42,7 +55,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <table class="table table-striped border border-success">
-                                <thead class="text-success">
+                                <thead class="text-white bg-success">
                                     <th>#</th>
                                     <th>
                                         First Name
@@ -58,6 +71,9 @@
                                     </th>
                                     <th>
                                         Registration Date
+                                    </th>
+                                    <th>
+                                        Update
                                     </th>
                                     <th>
                                         Remove
@@ -90,7 +106,10 @@
                                                     .$row['reg_date'].
                                                 "</td>
                                                 <td>
-                                                    <button type='submit' name='remove' class='btn btn-sm btn-danger'>Delete</button>
+                                                    <button type='submit' name=".$row['id']." class='btn btn-sm btn-danger' onclick='<php echo removeItem(".$row['id'].") ?>'>Edith</button>
+                                                </td>
+                                                <td>
+                                                    <button type='submit' name=".$row['id']." class='btn btn-sm btn-danger' onclick='<php echo removeItem(".$row['id'].") ?>'>Delete</button>
                                                 </td>
                                             </tr>";
                                         }
@@ -107,6 +126,16 @@
                 <!-- <div class="col-md-6 bg-img vh-100 p-3">
                     <img src="hertleys.png" alt="" class="img-fluid">
                 </div> -->
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 d-flex flex-row justify-content-between ">
+                    <button type="button" class="btn btn-outline-success " onclick="document.location = document.referrer;">
+                        << Back
+                    </button>
+                    <button type="button" class="btn btn-outline-success" onclick="document.location = 'http\://localhost/php_projects/registration-form/index.html'">
+                        Add+
+                    </button>
+                </div>
             </div>
         </div>
     </section>

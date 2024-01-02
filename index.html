@@ -23,13 +23,13 @@
                                 <label for="">
                                     First Name:
                                 </label>
-                                <input type="text" name="firstname" id="" class="form-control">
+                                <input type="text" name="firstname" id="" class="form-control" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="">
                                     Last Name:
                                 </label>
-                                <input type="text" name="lastname" id="" class="form-control">
+                                <input type="text" name="lastname" id="" class="form-control" required>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -37,7 +37,7 @@
                                 <label for="">
                                     Phone Number:
                                 </label>
-                                <input type="tel" name="phonenumber" id="" class="form-control">
+                                <input type="tel" name="phonenumber" id="" class="form-control" required>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -45,21 +45,26 @@
                                 <label for="">
                                     Email:
                                 </label>
-                                <input type="email" name="email" id="" class="form-control">
+                                <input type="email" name="email" id="" class="form-control" required>
                             </div>
                         </div>
                         <div class="row ">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <input type="submit" value="Submit" name="submit" class="btn btn-success">
                             </div>
+                            <div class="col-md-6 text-end">
+                                <button type="button" class="btn btn-outline-success" onclick="document.location = 'http\://localhost/php_projects/registration-form/view_list.php';">
+                                    View List
+                                </button>
+                            </div>
                         </div>
-
                     </form>
                 </div>
                 <div class="col-md-6 bg-img vh-100 p-3">
                     <img src="img/greenSit under constrction.png" alt="" class="img-fluid">
                 </div>
             </div>
+            
         </div>
     </section>
     
