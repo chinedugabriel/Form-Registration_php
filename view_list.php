@@ -42,7 +42,7 @@
     <title>View list</title>
 </head>
 <body >
-    <section>
+    <section id="section1">
         <div class="container-fluid px-5">
             <div class="row">
                 <div class="col-md-12 ">
@@ -108,7 +108,7 @@
                                                         .$row['reg_date'].
                                                     "</td>
                                                     <td>
-                                                        <a href='delete_data.php?id=".$row["id"]."' class='btn btn-sm btn-warning'>Edith</a>
+                                                        <a href='edith_data.php?id=".$row["id"]."' class='btn btn-sm btn-warning edith-form'>Edith</a>
                                                     </td>
                                                     <td>
                                                         <a href='delete_data.php?id=".$row["id"]."' class='btn btn-sm btn-danger'>Delete</a>
@@ -142,8 +142,59 @@
             </div>
         </div>
     </section>
+
+    <section id="section2">
+        <form action="insert_db.php" method="post" class="text-success border border-success p-3  h-50 d-flex flex-column justify-content-around " >
+            <div class="row mb-3">
+                <div class="col-md-12 text-center">
+                    <h2>Registration Form</h2>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="">
+                        First Name:
+                    </label>
+                    <input type="text" name="firstname" id="" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="">
+                        Last Name:
+                    </label>
+                    <input type="text" name="lastname" id="" class="form-control" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="">
+                        Phone Number:
+                    </label>
+                    <input type="tel" name="phonenumber" id="" class="form-control" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="">
+                        Email:
+                    </label>
+                    <input type="email" name="email" id="" class="form-control" required>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-6">
+                    <input type="submit" value="Submit" name="submit" class="btn btn-success">
+                </div>
+                <div class="col-md-6 text-end">
+                    <button type="button" class="btn btn-outline-success" id ='close-form'>
+                        close
+                    </button>
+                </div>
+            </div>
+        </form>
+    </section>
     
     <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="list.js"></script>
 </body>
 </html>
 
