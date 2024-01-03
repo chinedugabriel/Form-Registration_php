@@ -11,6 +11,7 @@
     }
 
     $sql = "SELECT * FROM visitors";
+    // $sql = "SELECT * FROM visitors WHERE id = 9";
     $result = mysqli_query($conn, $sql);
 
 
@@ -37,10 +38,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reg.css">
     <title>View list</title>
 </head>
-<body>
+<body >
     <section>
         <div class="container-fluid px-5">
             <div class="row">
@@ -54,72 +55,74 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <table class="table table-striped border border-success">
-                                <thead class="text-white bg-success">
-                                    <th>#</th>
-                                    <th>
-                                        First Name
-                                    </th>
-                                    <th>
-                                        Last Name
-                                    </th>
-                                    <th>
-                                        Phone Number
-                                    </th>
-                                    <th>
-                                        Email
-                                    </th>
-                                    <th>
-                                        Registration Date
-                                    </th>
-                                    <th>
-                                        Update
-                                    </th>
-                                    <th>
-                                        Remove
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <?php 
-                                    
-                                    if (mysqli_num_rows($result)>0){
-                                        // output the data of each row
-                                        while($row = mysqli_fetch_assoc($result)){
-                                            echo "
-                                            <tr>
-                                                <td>"
-                                                    . $row['id'] .
-                                                "</td>
-                                                <td>" 
-                                                    .$row['firstname'] .
-                                                "</td>
-                                                <td>" 
-                                                    .$row['lastname'].
-                                                "</td>
-                                                <td>"
-                                                    .$row['phonenumber'].
-                                                "</td>
-                                                <td>"
-                                                    .$row['email'].
-                                                "</td>
-                                                <td>"
-                                                    .$row['reg_date'].
-                                                "</td>
-                                                <td>
-                                                    <button type='submit' name=".$row['id']." class='btn btn-sm btn-danger' onclick='<php echo removeItem(".$row['id'].") ?>'>Edith</button>
-                                                </td>
-                                                <td>
-                                                    <button type='submit' name=".$row['id']." class='btn btn-sm btn-danger' onclick='<php echo removeItem(".$row['id'].") ?>'>Delete</button>
-                                                </td>
-                                            </tr>";
+                            <!-- <form action="delete_data.php" method="get"> -->
+                                <table class="table table-striped border border-success">
+                                    <thead class="text-white bg-success">
+                                        <th>#</th>
+                                        <th>
+                                            First Name
+                                        </th>
+                                        <th>
+                                            Last Name
+                                        </th>
+                                        <th>
+                                            Phone Number
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
+                                        <th>
+                                            Registration Date
+                                        </th>
+                                        <th>
+                                            Update
+                                        </th>
+                                        <th>
+                                            Remove
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+                                        
+                                        if (mysqli_num_rows($result)>0){
+                                            // output the data of each row
+                                            while($row = mysqli_fetch_assoc($result)){
+                                                echo "
+                                                <tr>
+                                                    <td>"
+                                                        . $row['id'] .
+                                                    "</td>
+                                                    <td>" 
+                                                        .$row['firstname'] .
+                                                    "</td>
+                                                    <td>" 
+                                                        .$row['lastname'].
+                                                    "</td>
+                                                    <td>"
+                                                        .$row['phonenumber'].
+                                                    "</td>
+                                                    <td>"
+                                                        .$row['email'].
+                                                    "</td>
+                                                    <td>"
+                                                        .$row['reg_date'].
+                                                    "</td>
+                                                    <td>
+                                                        <a href='delete_data.php?id=".$row["id"]."' class='btn btn-sm btn-warning'>Edith</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href='delete_data.php?id=".$row["id"]."' class='btn btn-sm btn-danger'>Delete</a>
+                                                    </td>
+                                                </tr>";
+                                            }
+                                        }else{
+                                            echo "0 results";
                                         }
-                                    }else{
-                                        echo "0 results";
-                                    }
-
-                                    ?>
-                                </tbody>
-                            </table>
+    
+                                        ?>
+                                    </tbody>
+                                </table>
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>
