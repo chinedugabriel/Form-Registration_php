@@ -12,16 +12,28 @@
 
 
 
-    $id = $_POST['id'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
+    function validate_form($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+    
+        return $data;
+    }
+    
+    
+    if ($_SERVER["REQUEST_METHOD"]=='POST'){
+        $id = validate_form($_POST['id']);
+        $first_name = validate_form($_POST['firstname']);
+        $last_name = validate_form($_POST['lastname']);
+        $phone_number =  validate_form($_POST['phonenumber']) ;
+        $email = validate_form($_POST['email']);
+    }
 
     if(!$conn){
         die("Connection failed".mysqli_connect_error());
     }
 
-    $sql = "UPDATE visitors SET firstname='$firstname', lastname='$lastname', email='$email' WHERE id='$id'";
+    $sql = "UPDATE visitors SET firstname='$first_name', lastname='$last_name', phonenumber='$phone_number', email='$email' WHERE id='$id'";
 
     if(mysqli_query($conn,$sql)){
         echo "data Update from list Successfully";
