@@ -15,19 +15,7 @@
     $result = mysqli_query($conn, $sql);
 
 
-    // if(isset($_POST['remove'])){
-        function removeItem($id){
-            global $conn;
-            
-            $id = $_POST["$id"];
-            $sql = "DELETE FROM visitors WHere id = $id";
-            if(mysqli_query($conn,$sql)){
-                echo "record removed Successfully";
-            }else{
-                echo "failed to remove record".mysqli_error($conn);
-            }
-        }
-    // }
+ 
     
 
 ?>
@@ -108,7 +96,9 @@
                                                         .$row['reg_date'].
                                                     "</td>
                                                     <td>
-                                                        <a href='edith_data.php?id=".$row["id"]."' class='btn btn-sm btn-warning edith-form'>Edith</a>
+                                                   
+                                                        <button type='button' class='btn btn-sm btn-warning edith-form' name=".$row["id"]." >Edith</button>
+                                                    
                                                     </td>
                                                     <td>
                                                         <a href='delete_data.php?id=".$row["id"]."' class='btn btn-sm btn-danger'>Delete</a>
@@ -144,53 +134,68 @@
     </section>
 
     <section id="section2">
-        <form action="insert_db.php" method="post" class="text-success border border-success p-3  h-50 d-flex flex-column justify-content-around " >
-            <div class="row mb-3">
-                <div class="col-md-12 text-center">
-                    <h2>Registration Form</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form action='edith_data.php' method='post' class='text-success border border-success p-3 d-flex flex-column justify-content-around ' >
+                    <div class='row mb-3'>
+                        <div class='col-md-12 text-center'>
+                            <h2>Registration Form</h2>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <div class='col-md-2'>
+                            <label for=''>
+                                Id:
+                            </label>
+                            <input type='text' name="id" id='tableId' class='form-control' >
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <div class='col-md-6'>
+                            <label for=''>
+                                First Name:
+                            </label>
+                            <input type='text' name='firstname' class='form-control' required>
+                        </div>
+                        <div class='col-md-6'>
+                            <label for=''>
+                                Last Name:
+                            </label>
+                            <input type='text' name='lastname' id='' class='form-control' required>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <div class='col-md-12'>
+                            <label for=''>
+                                Phone Number:
+                            </label>
+                            <input type='tel' name='phonenumber' id='' class='form-control' required>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <div class='col-md-12'>
+                            <label for=''>
+                                Email:
+                            </label>
+                            <input type='email' name='email' id='' class='form-control' required>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-6'>
+                            <input type='submit' value='Save' name='submit' class='btn btn-success'>
+                            <!-- <a href='http://http://localhost/projects/Form-Registration_php/edith_data.php' class='btn btn-success'></a> -->
+                        </div>
+                        <div class='col-md-6 text-end'>
+                            <button type='button' class='btn btn-outline-success' id ='close-form'>
+                                close
+                            </button>
+                        </div>
+                    </div>
+                </form>
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="">
-                        First Name:
-                    </label>
-                    <input type="text" name="firstname" id="" class="form-control" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="">
-                        Last Name:
-                    </label>
-                    <input type="text" name="lastname" id="" class="form-control" required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="">
-                        Phone Number:
-                    </label>
-                    <input type="tel" name="phonenumber" id="" class="form-control" required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="">
-                        Email:
-                    </label>
-                    <input type="email" name="email" id="" class="form-control" required>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-6">
-                    <input type="submit" value="Submit" name="submit" class="btn btn-success">
-                </div>
-                <div class="col-md-6 text-end">
-                    <button type="button" class="btn btn-outline-success" id ='close-form'>
-                        close
-                    </button>
-                </div>
-            </div>
-        </form>
+        </div>
     </section>
     
     <script src="bootstrap/js/bootstrap.js"></script>
