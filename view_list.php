@@ -148,7 +148,7 @@
                             <label for=''>
                                 Id:
                             </label>
-                            <input type='text' name="id" id='tableId' class='form-control' >
+                            <input type='text' name="id" id='tableId' class='form-control' required>
                         </div>
                     </div>
                     <div class='row mb-3'>
