@@ -140,7 +140,7 @@
                     <form action='edith_data.php' method='post' class='text-success border border-success p-3 d-flex flex-column justify-content-around ' >
                     <div class='row mb-3'>
                         <div class='col-md-12 text-center'>
-                            <h2>Registration Form</h2>
+                            <h2>Update Registration details</h2>
                         </div>
                     </div>
                     <div class='row mb-3'>
