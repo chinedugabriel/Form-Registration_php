@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="reg.css">
     <title>View list</title>
 </head>
-<body >
+<body class="position-relative vh-100" onload="hideSuccesAlert()">
     <section id="section1">
         <div class="container-fluid px-5">
             <div class="row">
@@ -130,8 +130,30 @@
                 </div>
             </div>
         </div>
-    </section>
 
+        
+    </section>
+    
+<?php
+// $report = isset($_GET['report']);
+
+if (isset($_GET['edith'])){
+    echo '    
+    <div class="success-alert position-absolute"  id="success-alert" >
+        <p class="p-2 text-center border rounded-2 bg-success text-white">Saved Successfully</p>
+    </div>
+    ';
+}
+if (isset($_GET['deleted'])){
+    echo '    
+    <div class="success-alert position-absolute"  id="success-alert" >
+        <p class="p-2 text-center border rounded-2 bg-danger text-white">Deleted Successfully</p>
+    </div>
+    ';
+}
+// echo $report ;
+
+?>
 
     
     <script src="bootstrap/js/bootstrap.js"></script>

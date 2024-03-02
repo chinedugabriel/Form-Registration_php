@@ -7,6 +7,8 @@
 
 body{
     background-color:  rgba(240, 255, 255, 0.884);
+    /* position: relative; */
+    border: 1px solid red;
 }
 
 section#section2{
@@ -17,7 +19,6 @@ section#section2{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    /* display: none; */
 }
 
 #section2>form{
@@ -28,3 +29,16 @@ section#section2{
 input{
     box-shadow: none !important;
 }
+
+/* success alert starts here */
+.success-alert{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    /* display: none; */
+    
+}
+.success-alert>p{
+    width: 200px;
+}
+/* success alert ends here */

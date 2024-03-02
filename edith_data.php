@@ -1,3 +1,4 @@
+
 <?php
     $servername = "localhost";
     $username = "root";
@@ -36,9 +37,11 @@
     $sql = "UPDATE visitors SET firstname='$first_name', lastname='$last_name', phonenumber='$phone_number', email='$email' WHERE id='$id'";
 
     if(mysqli_query($conn,$sql)){
-        echo "data Update from list Successfully";
+        // echo "data Update from list Successfully";
+        // echo "<script src='list.js'>showSuccesAlert();</script>";
         // echo "<script>setTimeout(()=>{document.location = document.referrer;},2000);</script>";
-        echo "<script>setTimeout(()=>{document.location = 'http://localhost/php_projects/registration-form/view_list.php';},1000);</script>";
+
+        echo "<script>setTimeout(()=>{document.location = 'http://localhost/php_projects/registration-form/view_list.php?edith=successful';},500);</script>";
     }else{
         echo"failed to update data from list".mysqli_error($conn);
     }
