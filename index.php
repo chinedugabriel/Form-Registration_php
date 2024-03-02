@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="reg.css">
     <title>Reg_form</title>
 </head>
-<body class="bg-white">
+<body class="bg-white position-relative" onload="hideSuccesAlert()">
     <section>
         <div class="container-fluid ">
             <div class="row">
@@ -60,14 +60,27 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 bg-img vh-100 p-3">
+                <div class="col-md-6 bg-img vh-95 p-3">
                     <img src="img/greenSit under constrction.png" alt="" class="img-fluid">
                 </div>
             </div>
             
         </div>
     </section>
+
+    <?php
+
+        if (isset($_GET['added'])){
+            echo '    
+            <div class="success-alert position-absolute"  id="success-alert" >
+                <p class="p-2 text-center border rounded-2 bg-success text-white">Added Successfully</p>
+            </div>
+            ';
+        }
+
+    ?>
     
     <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="list.js"></script>
 </body>
 </html>

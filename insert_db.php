@@ -35,10 +35,10 @@ VALUE('$first_name','$last_name','$phone_number','$email');
 
 
 if (mysqli_query($conn,$sql)){
-    echo "Added data Successfully ";
+    // echo "Added data Successfully ";
     echo"<script>setTimeout(()=>{
-        document.location = 'http://localhost/php_projects/registration-form/index.html';
-    },2000)</script>";
+        document.location = 'http://localhost/php_projects/registration-form/index.php?added=successful';
+    },500)</script>";
 }else{
     echo "Failed to add data ".mysqli_error($conn);
 }

@@ -121,7 +121,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-12 d-flex flex-row justify-content-between ">
-                    <button type="button" class="btn btn-outline-success " onclick="document.location = document.referrer;">
+                    <button type="button" class="btn btn-outline-success " onclick="document.location = 'http:/\/localhost/php_projects/registration-form/';">
                         << Back
                     </button>
                     <button type="button" class="btn btn-outline-success" onclick="document.location = 'http:/\/localhost/php_projects/registration-form/';">
@@ -135,7 +135,7 @@
     </section>
     
 <?php
-// $report = isset($_GET['report']);
+
 
 if (isset($_GET['edith'])){
     echo '    
