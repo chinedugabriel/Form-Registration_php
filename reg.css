@@ -17,7 +17,7 @@ section#section2{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    display: none;
+    /* display: none; */
 }
 
 #section2>form{

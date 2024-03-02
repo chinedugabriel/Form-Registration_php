@@ -97,11 +97,10 @@
                                                     "</td>
                                                     <td>
                                                    
-                                                        <button type='button' class='btn btn-sm btn-warning edith-form' name=".$row["id"]." >Edith</button>
-                                                    
+                                                        <a href='update_data_view.php?id=".$row['id']."&firstname=".$row['firstname']."&lastname=".$row['lastname']."&phonenumber=".$row['phonenumber']."&email=".$row['email']."' class='btn btn-sm btn-warning'>Edith</a>
                                                     </td>
                                                     <td>
-                                                        <a href='delete_data.php?id=".$row["id"]."' class='btn btn-sm btn-danger'>Delete</a>
+                                                        <a href='delete_data.php?id=".$row['id']."' class='btn btn-sm btn-danger'>Delete</a>
                                                     </td>
                                                 </tr>";
                                             }
@@ -125,7 +124,7 @@
                     <button type="button" class="btn btn-outline-success " onclick="document.location = document.referrer;">
                         << Back
                     </button>
-                    <button type="button" class="btn btn-outline-success" onclick="document.location = 'http\://localhost/php_projects/registration-form/index.html'">
+                    <button type="button" class="btn btn-outline-success" onclick="document.location = 'http:/\/localhost/php_projects/registration-form/';">
                         Add+
                     </button>
                 </div>
@@ -133,70 +132,7 @@
         </div>
     </section>
 
-    <section id="section2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <form action='edith_data.php' method='post' class='text-success border border-success p-3 d-flex flex-column justify-content-around ' >
-                    <div class='row mb-3'>
-                        <div class='col-md-12 text-center'>
-                            <h2>Update Registration details</h2>
-                        </div>
-                    </div>
-                    <div class='row mb-3'>
-                        <div class='col-md-2'>
-                            <label for=''>
-                                Id:
-                            </label>
-                            <input type='text' name="id" id='tableId' class='form-control' required>
-                        </div>
-                    </div>
-                    <div class='row mb-3'>
-                        <div class='col-md-6'>
-                            <label for=''>
-                                First Name:
-                            </label>
-                            <input type='text' name='firstname' class='form-control' required>
-                        </div>
-                        <div class='col-md-6'>
-                            <label for=''>
-                                Last Name:
-                            </label>
-                            <input type='text' name='lastname' id='' class='form-control' required>
-                        </div>
-                    </div>
-                    <div class='row mb-3'>
-                        <div class='col-md-12'>
-                            <label for=''>
-                                Phone Number:
-                            </label>
-                            <input type='tel' name='phonenumber' id='' class='form-control' required>
-                        </div>
-                    </div>
-                    <div class='row mb-3'>
-                        <div class='col-md-12'>
-                            <label for=''>
-                                Email:
-                            </label>
-                            <input type='email' name='email' id='' class='form-control' required>
-                        </div>
-                    </div>
-                    <div class='row'>
-                        <div class='col-md-6'>
-                            <input type='submit' value='Save' name='submit' class='btn btn-success'>
-                            <!-- <a href='http://http://localhost/projects/Form-Registration_php/edith_data.php' class='btn btn-success'></a> -->
-                        </div>
-                        <div class='col-md-6 text-end'>
-                            <button type='button' class='btn btn-outline-success' id ='close-form'>
-                                close
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                </div>
-            </div>
-        </div>
-    </section>
+
     
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="list.js"></script>
