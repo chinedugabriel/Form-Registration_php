@@ -1,4 +1,7 @@
 <?php
+    session_start();
+?>
+<?php
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -137,21 +140,33 @@
 <?php
 
 
-if (isset($_GET['edith'])){
-    echo '    
-    <div class="success-alert position-absolute"  id="success-alert" >
-        <p class="p-2 text-center border rounded-2 bg-success text-white">Saved Successfully</p>
+// this checks if the session for updated isset, it echo's an alert message responding if the data was successfully update in the database
+if(isset($_SESSION['updated'])){
+    if ($_SESSION['updated'] == "successful"){
+        echo '    
+        <div class="success-alert position-absolute"  id="success-alert" >
+        <p class="p-2 text-center border rounded-2 bg-success text-white">Updated Successfully</p>
     </div>
-    ';
+        ';
+
+        session_unset();
+        session_destroy();
+    }
 }
-if (isset($_GET['deleted'])){
-    echo '    
-    <div class="success-alert position-absolute"  id="success-alert" >
-        <p class="p-2 text-center border rounded-2 bg-danger text-white">Deleted Successfully</p>
-    </div>
-    ';
+
+// this checks if the session for deleted isset, it echo's an alert message if the record was deleted from the database
+if(isset($_SESSION['deleted'])){
+    if ($_SESSION['deleted'] == "successful"){
+        echo '    
+        <div class="success-alert position-absolute"  id="success-alert" >
+            <p class="p-2 text-center border rounded-2 bg-danger text-white">Deleted Successfully</p>
+        </div>
+        ';
+
+        session_unset();
+        session_destroy();
+    }
 }
-// echo $report ;
 
 ?>
 

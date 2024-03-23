@@ -1,4 +1,8 @@
 <?php
+    session_start();
+
+?>
+<?php
 
 
 function validate_form($data){
@@ -36,9 +40,11 @@ VALUE('$first_name','$last_name','$phone_number','$email');
 
 if (mysqli_query($conn,$sql)){
     // echo "Added data Successfully ";
-    echo"<script>setTimeout(()=>{
-        document.location = 'http://localhost/php_projects/registration-form/index.php?added=successful';
-    },500)</script>";
+    
+    // redirects the user to home page
+    header('location: http://localhost/php_projects/registration-form/index.php');
+
+    $_SESSION['addedToDB'] = "successful";
 }else{
     echo "Failed to add data ".mysqli_error($conn);
 }

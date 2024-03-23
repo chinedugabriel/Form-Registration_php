@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,13 +74,19 @@
 
     <?php
 
-        if (isset($_GET['added'])){
-            echo '    
-            <div class="success-alert position-absolute"  id="success-alert" >
-                <p class="p-2 text-center border rounded-2 bg-success text-white">Added Successfully</p>
-            </div>
-            ';
+        if(isset($_SESSION['addedToDB'])){
+            if ($_SESSION['addedToDB'] == "successful"){
+                echo '    
+                <div class="success-alert position-absolute"  id="success-alert" >
+                    <p class="p-2 text-center border rounded-2 bg-success text-white">Added Successfully</p>
+                </div>
+                ';
+    
+                session_unset();
+                session_destroy();
+            }
         }
+
 
     ?>
     

@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 
 <?php
     $servername = "localhost";
@@ -38,10 +43,12 @@
 
     if(mysqli_query($conn,$sql)){
         // echo "data Update from list Successfully";
-        // echo "<script src='list.js'>showSuccesAlert();</script>";
-        // echo "<script>setTimeout(()=>{document.location = document.referrer;},2000);</script>";
 
-        echo "<script>setTimeout(()=>{document.location = 'http://localhost/php_projects/registration-form/view_list.php?edith=successful';},500);</script>";
+        // redirects the user to view_list page
+        header('location: http://localhost/php_projects/registration-form/view_list.php');
+
+        $_SESSION['updated'] = 'successful';
+
     }else{
         echo"failed to update data from list".mysqli_error($conn);
     }
